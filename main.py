@@ -19,8 +19,7 @@ estimated_salary = st.number_input("Estimated Salary", 0.0, 200000.0, 70000.0)
 
 # Button
 if st.button("Predict Churn"):
-
-    url = "http://127.0.0.1:8000/evaluate-churn"
+    url = "https://your-fastapi-service.onrender.com/evaluate-churn"
 
     payload = {
         "credit_score": credit_score,
