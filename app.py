@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import pandas as pd
 import joblib
-
+from fastapi.responses import RedirectResponse
 app = FastAPI()
 model = joblib.load("models/churn_model.pkl")
 country_encoder = joblib.load("models/country_encoder.pkl")
@@ -19,7 +19,9 @@ class Customer(BaseModel):
     credit_card: int
     active_member: int
     estimated_salary: float
-
+@app.get("/")
+def root():
+    return RedirectResponse(url="/docs")
 @app.get("/")
 def home():
     return {"message": "Bank Churn API Running Successfully"}
