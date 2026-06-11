@@ -69,7 +69,7 @@ estimated_salary = st.number_input(
 if st.button("🔍 Predict Churn"):
 
     # Your FastAPI URL
-    url = "https://bank-customer-churn-early-warning-system.onrender.com/evaluate-churn"
+    url = url = "https://bank-customer-churn-early-warning-system-97gg.onrender.com/evaluate-churn"
 
     payload = {
         "credit_score": credit_score,
